@@ -7,11 +7,6 @@ body {
     overflow-x: hidden;
     background: #000;
 }
-
-#background {
-    z-index: -1;
-}
-
 .loading {
     position: fixed;
     top: 0;
@@ -30,128 +25,78 @@ body {
 }
 
 #header {
-    background-color: blue;
-    width: 100%;
-    /* background: #000; */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-    height: 180px;
+    background: #000;
+    height: 200px;
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    z-index: 9999;
 }
-
 #nav {
-    background-color: red;
-    width: 100%;
-    height: 80%;
+    height: 70%;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 .nav_inner{
-    background-color: green;
     display: flex;
     width: 95%;
-    height: 100%;
+    height: 120px;
     margin: 0 auto;
 }
-/* #nav .mobile{
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 30px;
-}
-#nav .mobile .hamburger_button{
-    font-size: 2.5em;
-} */
+
 #nav .header_menu {
     width: 85%;
     display: flex;
-    line-height: 51px;
+    line-height: 120px;
 }
-
+#nav .header_menu .logo{
+    
+}
 .header_menu>.depth1 {
     width: 100%;
     display: flex;
-    justify-content: space-around;
 }
 
 .header_menu>.depth1>li {
     font-size: 1.3em;
-    /* border: 1px solid blue; */
     position: relative;
+    margin-left: 100px;
 }
 
 .header_menu>.depth1>li>a {
     display: block;
-    /* height: 100%; */
-    /* border: 1px solid red; */
 }
 
 .header_menu>.depth1>li:hover>a {
     color: #C2172D;
 }
-
-.header_menu>.depth1>li>.depth2_wrap>.depth2 {
-    position: absolute;
-    top: 80%;
-    left: 0;
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-}
-
-.header_menu>.depth1>li:first-child>.depth2_wrap>.depth2 {
-    width: 400%;
-}
-
-.header_menu>.depth1>li:nth-child(2)>.depth2_wrap>.depth2 {
-    width: 700%;
-}
-
-.header_menu>.depth1>li:nth-child(3)>.depth2_wrap>.depth2 {
-    width: 600%;
-}
-
-.header_menu>.depth1>li:nth-child(4)>.depth2_wrap>.depth2 {
-    width: 350%;
-}
-
-.header_menu>.depth1>li:nth-child(5)>.depth2_wrap>.depth2 {
-    width: 350%;
-}
-
-.header_menu>.depth1>li:last-child>.depth2_wrap>.depth2 {
-    width: 400%;
-}
-
-.header_menu>.depth1>li>.depth2_wrap>.depth2>li {
-    float: left;
-    font-size: 16px;
-    /* border: 1px solid green; */
+.header_menu>.depth1>li>.depth2{
     display: none;
+    width: 50vw;
+    position: absolute;
+    top: 100%;
+    left: 0;
 }
-
-#nav .header_menu>.depth1>li>.depth2_wrap>.depth2>li:hover {
+.header_menu>.depth1>li>.depth2 li{
+    margin-right: 50px;
+}
+.header_menu>.depth1>li:hover>.depth2{
+    display: flex;
+}
+.header_menu>.depth1>li>.depth2 li:hover a{
     color: #C2172D;
 }
-
-#nav .header_menu>.depth1>li:hover>.depth2_wrap>.depth2>li {
-    display: block;
-}
-#nav .header_menu>.depth1>li:hover>.depth2_wrap{
-
-}
 #nav .sns {
-    /* border: 1px solid blue; */
-    width: 15%;
-    line-height: 51px;
-    display: flex;
-    justify-content: space-between;
+    line-height: 120px;
 }
-
 #nav .sns a {
     font-size: 32px;
+    margin-right: 30px;
 }
-
+#nav .sns a:last-child{
+    margin-right: 0;
+}
 #nav .sns a i {
     transition: all 0.5s;
 }
@@ -159,14 +104,67 @@ body {
 #nav .sns a:hover i {
     transform: scale(1.3);
 }
-.section1 {
+#section{
+    width: 100%;
+}
+.article1{
+    position: relative;
+}
+.article1 > .article1_inner{
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    display: flex;
+}
+.article1 #background{
+    z-index: -1;
+}
+.article1 .article1_inner .schedule{
+    background: #000;
+    width: 400px;
+    height: 500px;
+    border-radius: 8px;
+    border: 8px solid red;
+    z-index: 9999;
+    position: relative;
+    margin-right: 50px;
+}
+.article1 .article1_inner .schedule p{
+    padding: 50px 0 10px 30px;
+    font-size: 1.2em;
+}
+.article1 .article1_inner .schedule h2{
+    margin: 0 30px 0 30px;
+    padding-bottom: 40px;
+    font-size: 1.8em;
+    color: #FB122F;
+    border-bottom: 2px solid rgba(255,255,255,0.6);
+}
+.article1 .article1_inner .schedule .match_up{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+.article1 .article1_inner .schedule .match_up img{
+    width: 35%
+}
+.article1 .article1_inner .schedule .match_up .vs{
+    width: 20%;
+    height: 20%;
+}
+.article2 {
     max-width: 1500px;
     height: 700px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
 }
-.section1 .players{
+.article2 .players{
     border: 1px solid #fff;
     position: absolute;
     top: 80%;
@@ -174,27 +172,27 @@ body {
     transform: translateX(-50%);
     z-index: 99999;
 }
-.section1 .players a{
+.article2 .players a{
     padding: 30px 30px;
 }
-.section1 .inner-list {
+.article2 .inner-list {
     display: flex;
     transition: 0.5s ease-out;
     height: 100%;
 }
 
-.section1 .inner-list .inner {
+.article2 .inner-list .inner {
     padding: 0 16px;
     position: relative;
 }
 
-.section1 .inner-list .inner img {
+.article2 .inner-list .inner img {
     width: 400px;
     display: block;
     margin: 0 auto;
 }
 
-.section1 .inner-list .inner p {
+.article2 .inner-list .inner p {
     color: #fff;
     font-size: 2em;
     line-height: 2.5em;
@@ -203,26 +201,26 @@ body {
     left: 10%;
     transform: translateY(-50%);
 }
-.section1 .inner-list .inner p span{
+.article2 .inner-list .inner p span{
     font-size: 2.5em;
 }
-.section1 .button-list {
+.article2 .button-list {
     text-align: center;
     background: none;
 }
-.section1 .button-list .button-left, .button-list .button-right{
+.article2 .button-list .button-left, .button-list .button-right{
     background: none;
     color: #fff;
     font-size: 2.5em;
     cursor: pointer;
 }
-.section1 .button-list .button-left{
+.article2 .button-list .button-left{
     position: absolute;
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
 }
-.section1 .button-list .button-right{
+.article2 .button-list .button-right{
     position: absolute;
     top: 50%;
     right: 5%;
